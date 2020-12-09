@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}delete{% endblock %}
+
+{% block content %}
+<div class="first">
+  <h3>DELETE THE OLDEST JOKE</h3>
+</div>
+<h2>Results:</h2>
+<div id="results">
+    <div class="category-name"></div>
+    <a class="nav-item nav-link" href="{{ url_for('userjokes') }}">List your jokes</a>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}user jokes{% endblock %}
+
+{% block content %}
+<div class="first">
+  <h3>Here are all of your chosen jokes</h3>
+</div>
+<h2>Results:</h2>
+<div id="results">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Joke</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for j in joke %}
+      <tr>
+       <td>{{ j.category }}</td>
+       <td>{{ j.joke }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+    <a class="nav-item nav-link" href="{{ url_for('deletejokes') }}">Deleteing a joke from the list?</a>
+    <a class="nav-item nav-link" href="{{ url_for('jokes') }}">Have a nother Joke</a>
+    <a class="nav-item nav-link" href="{{ url_for('logout') }}">Log Out</a>
+</div>
+  {% endblock %}
